@@ -1,0 +1,13 @@
+.signup {
+  width: 80%;
+  margin: 1rem auto;
+}
+.signupTitle {
+  text-align: center;
+}
+.signupContent {
+  text-align: justify;
+}
+mat-form-field {
+  width: 100%;
+}

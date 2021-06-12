@@ -1,0 +1,16 @@
+.dashboard {
+  width: 80%;
+  margin: 1rem auto;
+}
+.dashboardTitle {
+  text-align: center;
+}
+.dashboardContent {
+  text-align: justify;
+}
+mat-grid-tile {
+  background: lightblue;
+}
+p {
+  font-weight: bold;
+}

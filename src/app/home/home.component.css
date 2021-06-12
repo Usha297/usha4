@@ -1,0 +1,10 @@
+a {
+  color: white;
+  text-align: right;
+}
+.slider {
+  margin: 3rem auto;
+}
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}

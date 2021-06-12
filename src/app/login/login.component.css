@@ -1,0 +1,13 @@
+.login {
+  width: 80%;
+  margin: 1rem auto;
+}
+.loginTitle {
+  text-align: center;
+}
+.loginContent {
+  text-align: justify;
+}
+mat-form-field {
+  width: 100%;
+}

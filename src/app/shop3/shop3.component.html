@@ -1,0 +1,26 @@
+<mat-card class="s">
+  <mat-card-title class="sTitle">Available Products</mat-card-title>
+  <mat-card-subtitle>Buy required products</mat-card-subtitle>
+  <mat-card-content class="sContent"  >
+    <mat-grid-list cols="3" rowHeight="3:3">
+      <mat-grid-tile *ngFor='let sp of products'>
+        <mat-grid-tile-header>
+          <span>{{sp.productname}}</span>
+
+        </mat-grid-tile-header>
+        <img src="../../assets/m10.jpg" width="100%">
+        <mat-grid-tile-footer>
+          <span>{{sp.price}}INR</span>
+          <span class="example-fill-remaining-space"></span>
+          <span style="text-align: right;"><button mat-raised-button  color='primary' (click)= 'ap(sp.productname, sp.price)'>BUY</button></span>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+  <p>Total = {{total}}</p>
+  <button mat-raised-button color='accent' (click)='openDialog()'>Checkout</button>
+</mat-card>
+<!--<mat-card *ngFor='let s of snr'>
+  {{s}}
+  <button (click)='dp(s)'>DELETE</button>
+</mat-card>-->

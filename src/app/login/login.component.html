@@ -1,0 +1,36 @@
+<mat-card class="login">
+  <mat-card-title class="loginTitle">Log In</mat-card-title>
+  <mat-card-subtitle>Login form</mat-card-subtitle>
+  <mat-card-content class="loginContent">
+    <form #login='ngForm' (submit)='loginForm(login)'>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="abc@example.com" [formControl]="email" [(ngModel)] = 'useremail' name="usermail" required>
+        <mat-hint>Emails of type: Gmail, Rediffmail, Yahoomail</mat-hint>
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]='password' [(ngModel)] = 'userpassword' name="userpassword" minlength required>
+        <mat-hint>Minimum length of password shold be atleast 8</mat-hint>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf='password.invalid'>{{getErrorMessagePassword()}}</mat-error>
+      </mat-form-field><br>
+
+      <button type="submit" mat-raised-button color='accent'>Log In</button>
+
+    </form>
+  </mat-card-content>
+  </mat-card>
+
+
+
+
+
+
+
+

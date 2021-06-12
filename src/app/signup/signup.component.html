@@ -1,0 +1,51 @@
+<mat-card class="signup">
+  <mat-card-title class="signupTitle">Sign Up</mat-card-title>
+  <mat-card-subtitle>Sign up form</mat-card-subtitle>
+  <mat-card-content class="signupContent">
+    <form #signup='ngForm' (submit)='signupForm(signup)'>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your Name</mat-label>
+        <input matInput placeholder="John xyz" [formControl]="username" [(ngModel)]='userName' name="userName" required>
+        <mat-hint>Enter your full name</mat-hint>
+        <mat-error *ngIf="username.invalid">{{getErrorMessageUsername()}}</mat-error>
+      </mat-form-field><br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControl]='password' [(ngModel)]='userPassword' name="userPassword" minlength required>
+        <mat-hint>Minimum length of password shold be atleast 8</mat-hint>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf='password.invalid'>{{getErrorMessagePassword()}}</mat-error>
+      </mat-form-field><br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="abc@example.com" [formControl]="email" [(ngModel)]='userEmail' name="userEmail" required>
+          <mat-hint>Emails of type: Gmail, Rediffmail, Yahoomail</mat-hint>
+          <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Enter your phone number</mat-label>
+          <input matInput [formControl]="phone" [(ngModel)]='userPhoneno' name="userPhoneno" required>
+          <mat-error *ngIf="phone.invalid">{{getErrorMessagePhone()}}</mat-error>
+        </mat-form-field><br>
+
+        <button type="submit" mat-raised-button color='accent'>Sign Up</button>
+
+    </form>
+  </mat-card-content>
+  </mat-card>
+
+
+
+
+
+
+
+
+
+

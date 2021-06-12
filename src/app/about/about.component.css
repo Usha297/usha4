@@ -1,0 +1,10 @@
+.about {
+  width: 80%;
+  margin: 1rem auto;
+}
+.aboutTitle {
+  text-align: center;
+}
+.aboutContent {
+  text-align: justify;
+}
